@@ -15,6 +15,24 @@ const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster
 console.log(uri);
 
 
+async function run() {
+    try {
+
+        await client.connect();
+        console.log('database connected');
+
+
+
+
+
+    }
+    finally {
+
+    }
+}
+run().catch(console.dir);
+
+
 app.get('/', (req, res) => {
     res.send('Hello from Laptop services products.!')
 })
