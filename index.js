@@ -25,6 +25,7 @@ async function run() {
         console.log('database connected');
 
         const serviceCollection = client.db('Laptop-services').collection('services');
+        const bookingCollection = client.db('Laptop-services').collection('services');
 
 
 
@@ -43,8 +44,11 @@ async function run() {
 
         });
 
-
-
+        app.post('/booking', async (req, res) => {
+            const booking = req.body;
+            const result = await bookingCollection.insertOne(booking);
+            res.send(result);
+        })
 
 
 
